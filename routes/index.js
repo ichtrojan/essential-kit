@@ -2,7 +2,7 @@ var express = require('express')
 var app = express()
 
 app.get('/', (req, res, next) => {
-  res.send('It Works')
+  res.render('index')
 })
 
 module.exports = app
