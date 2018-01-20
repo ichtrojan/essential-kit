@@ -18,9 +18,6 @@ const PORT = process.env.PORT
 //View Engine
 app.set('view engine', 'pug')
 
-//Set Public folder
-app.use(express.static('public'))
-
 //set public static path
 app.use(express.static(path.join(__dirname, 'public')))
 
