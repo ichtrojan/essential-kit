@@ -6,6 +6,8 @@ var bodyParser = require('body-parser')
 var { check, validationResult } = require('express-validator/check')
 var { matchedData, sanitize } = require('express-validator/filter')
 
+require('dotenv').config()
+
 //Initiate Express
 var app = express()
 
