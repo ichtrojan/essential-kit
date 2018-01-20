@@ -1,0 +1,22 @@
+{
+  "name": "essential-kit",
+  "version": "1.0.0",
+  "description": "A Essential Package to Simplify web development with nodejs",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ichtrojan/essential-kit.git"
+  },
+  "author": "Michael Okoh",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ichtrojan/essential-kit/issues"
+  },
+  "homepage": "https://github.com/ichtrojan/essential-kit#readme",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
+}
