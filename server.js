@@ -8,7 +8,7 @@ var app = express()
 //Define Desired Port Here
 const PORT =  3333
 
-//favicon (would uncomment this when we have a stable page)
+//favicon
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
 
 //Define Routes Here
