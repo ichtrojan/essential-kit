@@ -2,6 +2,9 @@ var express = require('express')
 var path = require('path')
 var favicon = require('serve-favicon')
 
+const { check, validationResult } = require('express-validator/check')
+const { matchedData, sanitize } = require('express-validator/filter')
+
 //Initiate Express
 var app = express()
 
