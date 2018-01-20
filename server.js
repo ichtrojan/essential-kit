@@ -11,6 +11,8 @@ const PORT =  3333
 //View Engine
 app.set('view engine', 'pug')
 
+app.use(express.static('public'));
+
 //favicon
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
 
