@@ -1,3 +1,6 @@
+//require dotenv
+require('dotenv').config()
+
 var express = require('express')
 var path = require('path')
 var favicon = require('serve-favicon')
@@ -6,21 +9,22 @@ var bodyParser = require('body-parser')
 var { check, validationResult } = require('express-validator/check')
 var { matchedData, sanitize } = require('express-validator/filter')
 
-require('dotenv').config()
-
 //Initiate Express
 var app = express()
 
 //Define Desired Port Here
-const PORT = 3333
+const PORT = process.env.PORT
 
 //View Engine
 app.set('view engine', 'pug')
 
 //Set Public folder
-app.use(express.static('public'));
+app.use(express.static('public'))
 
-//favicon
+//set public static path
+app.use(express.static(path.join(__dirname, 'public')))
+
+//set favicon
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
 
 //Define Routes Here
@@ -30,9 +34,6 @@ var form = require('./routes/form')
 //Add Routes Middlewares Here
 app.use('/', index)
 app.use('/form', form)
-
-//Middlewares Here
-app.use(express.static(path.join(__dirname, 'public')))
 
 //Serve Application
 app.listen(PORT, (req, res, next) => {
