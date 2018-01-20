@@ -2,6 +2,7 @@ var express = require('express')
 var path = require('path')
 var favicon = require('serve-favicon')
 var mongoose = require('mongoose')
+var bodyParser = require('body-parser')
 var { check, validationResult } = require('express-validator/check')
 var { matchedData, sanitize } = require('express-validator/filter')
 
