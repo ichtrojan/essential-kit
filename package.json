@@ -4,7 +4,6 @@
   "description": "A Essential Package to Simplify web development with nodejs",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "essential": "nodemon server.js"
   },
   "repository": {
