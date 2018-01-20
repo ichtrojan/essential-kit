@@ -5,11 +5,11 @@ var favicon = require('serve-favicon')
 //Initiate Express
 var app = express()
 
-//Define Desired Port here
+//Define Desired Port Here
 const PORT =  3333
 
 //favicon (would uncomment this when we have a stable page)
-// app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
+app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
 
 //Define Routes Here
 var index = require('./routes/index')
