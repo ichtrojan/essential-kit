@@ -4,8 +4,8 @@ var mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 
 // start connection
-async function run(){
-	await mongoose.connect(process.env.DB_HOST, {
-		useMongoClient: true
-	});
-}
+mongoose.connect(process.env.DB_HOST).then(function (e){
+	console.log('Connected !');
+}).catch(function (e){
+	console.error('Fail to connect');
+});

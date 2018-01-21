@@ -1,37 +1,34 @@
-var express = require('express')
-var bodyParser = require('body-parser')
+let express = require('express')
+let bodyParser = require('body-parser')
+let { check, validationResult } = require('express-validator/check')
+let { matchedData, sanitize } = require('express-validator/filter')
+let app = express()
 
-var app = express()
-
-var Form = require('../models/form')
+let Form = require('../models/form')
 
 //Body Parser Middleware
-app.use(bodyParser.urlencoded({ extended: true }))
+app.use(bodyParser.urlencoded({ extended: false }))
 
-// Get all Form Data
 app.get('/', (req, res, next) => {
-  // Form.find({}, (err, data) => {
-  //   if (err) {
-  //     return res.status(500).send("There was a problem finding the Form Data.")
-  //   }
-  //
-  //   res.status(200).send(data)
-  // })
   var csrfToken = req.csrfToken();
   res.render('form', { csrfToken })
   // console.log(req.csrfToken());
 })
 
+
 // Add a form data
-app.post('/', async (req, res) => {
+app.post('/', (req, res) => {
 
-  console.log(req.body._csrf);
-
+  // let data = {
+  //   name: check(req.body.name).withMessage('must be a valid name'),
+  //   email: check(req.body.email).isEmail().withMessage('must be a valid email'),
+  //   address: check(req.body.address).trim().withMessage('must be a valid address')
+  // }
 
   // Form.create({
-  //   name : req.body.name,
-  //   email : req.body.email,
-  //   address : req.body.address
+  //   name : data.name,
+  //   email : data.email,
+  //   address : data.address
   // }, (err, data) => {
   //   if (err) {
   //     return res.status(500).send("There was a problem adding the information to the database.")
@@ -41,13 +38,20 @@ app.post('/', async (req, res) => {
   // });
 
   // do save and return back.
-  // var form = new Form(req.body);
+  var form = new Form({
+    name: req.body.name,
+    email: req.body.email,
+    address: req.body.address
+  });
 
-  // // save posts
-  // await form.save();
+  // save posts
+  form.save();
+
+  // request flash
+  // var msg = req.flash('success', '1 new created ');
 
   // redirect home
-  // res.redirect('/');
+  res.redirect('/');
 });
 
 // app.get('/:id', (req, res) => {

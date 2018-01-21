@@ -1,6 +1,6 @@
 {
   "name": "essential-kit",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "A Essential Package to Simplify web development with nodejs",
   "main": "server.js",
   "scripts": {
@@ -26,6 +26,7 @@
     "express-session": "^1.15.6",
     "express-validator": "^4.3.0",
     "mongoose": "^5.0.1",
+    "nodemon": "^1.14.11",
     "pug": "^2.0.0-rc.4",
     "serve-favicon": "^2.4.5"
   }

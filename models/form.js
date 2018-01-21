@@ -11,12 +11,10 @@
 
 // module.exports = mongoose.model('Form');
 
-// // import mogoose
+// import mogoose
 var mongoose = require('mongoose');
-// // import promise
-// mongoose.Promise = global.Promise;
-// if i want to use promise
-
+// import promise
+mongoose.Promise = global.Promise;
 
 // create a posts Schema
 var Users = new mongoose.Schema({
@@ -28,12 +26,12 @@ var Users = new mongoose.Schema({
 	email: {
 		type: String,
 		trim: true,
-		required: "can not post empty card"
+		required: "can not post empty email"
 	},
 	address: {
 		type: String,
 		trim: true,
-		required: "can not post empty card"
+		required: "can not post empty address"
 	}
 });
 

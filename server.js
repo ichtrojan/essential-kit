@@ -9,7 +9,6 @@ let cookieParser = require('cookie-parser')
 let session    = require('express-session')
 let bodyParser = require('body-parser')
 let csrf       = require('csurf')
-let pug        = require('pug')
 let { check, validationResult } = require('express-validator/check')
 let { matchedData, sanitize }   = require('express-validator/filter')
 
@@ -35,20 +34,12 @@ app.use(session({
   cookie: { secure: true }
 }))
 
-// csrf
-app.use(csrf({'cookie': true}));
-
-// setting middleware csrfToken
-app.use(function (req, res, next) {
-  var token = req.csrfToken();
-  res.cookie('XSRF-TOKEN', token);
-  res.locals.csrfToken = token;
-  next();
-});
-
 //bodyParser
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
+
+//csrf
+app.use(csrf({ cookie: true }))
 
 //set public static path
 app.use(express.static(path.join(__dirname, './public')))
