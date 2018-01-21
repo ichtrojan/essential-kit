@@ -12,6 +12,9 @@ var { matchedData, sanitize } = require('express-validator/filter')
 //Initiate Express
 var app = express()
 
+//Require Database configurations
+var db = require('./database/db')
+
 //Define Desired Port Here
 const PORT = process.env.PORT
 
