@@ -34,11 +34,12 @@ app.use(session({
   cookie: { secure: true }
 }))
 
-app.use(csrf({ cookie: true }))
-
 //bodyParser
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
+
+//csrf
+app.use(csrf({ cookie: true }))
 
 //set public static path
 app.use(express.static(path.join(__dirname, './public')))
