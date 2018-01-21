@@ -1,24 +1,24 @@
 //require dotenv
 require('dotenv').config()
 
-var express = require('express')
-var path = require('path')
-var favicon = require('serve-favicon')
-var mongoose = require('mongoose')
-var cookieParser = require('cookie-parser')
-var bodyParser = require('body-parser')
-var csrf = require('csurf')
-var { check, validationResult } = require('express-validator/check')
-var { matchedData, sanitize } = require('express-validator/filter')
+let express = require('express')
+let path = require('path')
+let favicon = require('serve-favicon')
+let mongoose = require('mongoose')
+let cookieParser = require('cookie-parser')
+let bodyParser = require('body-parser')
+let csrf = require('csurf')
+let { check, validationResult } = require('express-validator/check')
+let { matchedData, sanitize } = require('express-validator/filter')
 
 //Initiate Express
-var app = express()
+let app = express()
 
 //Require Database configurations
-var db = require('./database/db')
+let db = require('./database/db')
 
 //Define Desired Port Here
-const PORT = process.env.PORT
+let PORT = process.env.PORT
 
 //View Engine
 app.set('view engine', 'pug')
@@ -38,8 +38,8 @@ app.use(express.static(path.join(__dirname, 'public')))
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
 
 //Define Routes Here
-var index = require('./routes/index')
-var form = require('./routes/form')
+let index = require('./routes/index')
+let form = require('./routes/form')
 
 //Add Routes Middlewares Here
 app.use('/', index)
