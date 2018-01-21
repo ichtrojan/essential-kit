@@ -9,7 +9,6 @@ let cookieParser = require('cookie-parser')
 let session = require('express-session')
 let bodyParser = require('body-parser')
 let csrf = require('csurf')
-let pug = require('pug')
 let { check, validationResult } = require('express-validator/check')
 let { matchedData, sanitize } = require('express-validator/filter')
 
