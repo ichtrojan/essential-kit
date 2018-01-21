@@ -55,6 +55,12 @@ let form = require('./routes/form')
 app.use('/', index)
 app.use('/form', form)
 
+//Catch 404
+app.use((req, res) => {
+  res.status(404)
+  res.render('404')
+})
+
 //Serve Application
 app.listen(PORT, (req, res, next) => {
   console.log('now serving on port ' + PORT)
