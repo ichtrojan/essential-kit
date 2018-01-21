@@ -1,9 +1,9 @@
-var express = require('express')
-var bodyParser = require('body-parser')
+let express = require('express')
+let bodyParser = require('body-parser')
 
-var app = express()
+let app = express()
 
-var Form = require('../models/form')
+let Form = require('../models/form')
 
 //Body Parser Middleware
 app.use(bodyParser.urlencoded({ extended: true }))
