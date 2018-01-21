@@ -6,6 +6,7 @@ let path = require('path')
 let favicon = require('serve-favicon')
 let mongoose = require('mongoose')
 let cookieParser = require('cookie-parser')
+let session = require('express-session')
 let bodyParser = require('body-parser')
 let csrf = require('csurf')
 let { check, validationResult } = require('express-validator/check')
@@ -23,19 +24,28 @@ let PORT = process.env.PORT
 //View Engine
 app.set('view engine', 'pug')
 
-//set Middleware for security
+//set Middlewares for security
+app.use(cookieParser())
+app.set('trust proxy', 1)
+
+app.use(session({
+  secret: 'keyboard',
+  resave: false,
+  saveUninitialized: true,
+  cookie: { secure: true }
+}))
+
 app.use(csrf({ cookie: true }))
-app.use(cookieParser());
 
 //bodyParser
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: true }))
 
 //set public static path
-app.use(express.static(path.join(__dirname, 'public')))
+app.use(express.static(path.join(__dirname, './public')))
 
 //set favicon
-app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
+app.use(favicon(path.join(__dirname, './public', 'favicon.ico')))
 
 //Define Routes Here
 let index = require('./routes/index')
@@ -50,4 +60,4 @@ app.listen(PORT, (req, res, next) => {
   console.log('now serving on port ' + PORT)
 })
 
-module.exports = app;
+module.exports = app
