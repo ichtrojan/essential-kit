@@ -1,16 +1,16 @@
 //require dotenv
 require('dotenv').config()
 
-let express = require('express')
-let path = require('path')
-let favicon = require('serve-favicon')
+let express  = require('express')
+let path     = require('path')
+let favicon  = require('serve-favicon')
 let mongoose = require('mongoose')
 let cookieParser = require('cookie-parser')
-let session = require('express-session')
+let session    = require('express-session')
 let bodyParser = require('body-parser')
-let csrf = require('csurf')
+let csrf       = require('csurf')
 let { check, validationResult } = require('express-validator/check')
-let { matchedData, sanitize } = require('express-validator/filter')
+let { matchedData, sanitize }   = require('express-validator/filter')
 
 //Initiate Express
 let app = express()
