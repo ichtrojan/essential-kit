@@ -51,7 +51,7 @@ app.post('/', (req, res) => {
   // var msg = req.flash('success', '1 new created ');
 
   // redirect home
-  res.redirect('/');
+  res.redirect('/form');
 });
 
 // app.get('/:id', (req, res) => {
