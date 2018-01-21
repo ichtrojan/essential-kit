@@ -10,13 +10,14 @@ app.use(bodyParser.urlencoded({ extended: true }))
 
 // Get all Form Data
 app.get('/', (req, res, next) => {
-  Form.find({}, (err, data) => {
-    if (err) {
-      return res.status(500).send("There was a problem finding the Form Data.")
-    }
-
-    res.status(200).send(data)
-  })
+  // Form.find({}, (err, data) => {
+  //   if (err) {
+  //     return res.status(500).send("There was a problem finding the Form Data.")
+  //   }
+  //
+  //   res.status(200).send(data)
+  // })
+  res.render('form', { csrfToken: req.csrfToken() })
 })
 
 // Add a form data
