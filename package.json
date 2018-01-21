@@ -4,7 +4,8 @@
   "description": "A Essential Package to Simplify web development with nodejs",
   "main": "server.js",
   "scripts": {
-    "essential": "nodemon server.js"
+    "essential": "nodemon server.js",
+    "start": " node server.js"
   },
   "repository": {
     "type": "git",
@@ -17,8 +18,15 @@
   },
   "homepage": "https://github.com/ichtrojan/essential-kit#readme",
   "dependencies": {
+    "body-parser": "^1.18.2",
+    "cookie-parser": "^1.4.3",
+    "csurf": "^1.9.0",
     "dotenv": "^4.0.0",
     "express": "^4.16.2",
-    "express-validator": "^4.3.0"
+    "express-session": "^1.15.6",
+    "express-validator": "^4.3.0",
+    "mongoose": "^5.0.1",
+    "pug": "^2.0.0-rc.4",
+    "serve-favicon": "^2.4.5"
   }
 }

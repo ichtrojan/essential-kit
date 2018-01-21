@@ -1,17 +1,17 @@
 //require dotenv
 require('dotenv').config()
 
-let express = require('express')
-let path = require('path')
-let favicon = require('serve-favicon')
+let express  = require('express')
+let path     = require('path')
+let favicon  = require('serve-favicon')
 let mongoose = require('mongoose')
 let cookieParser = require('cookie-parser')
-let session = require('express-session')
+let session    = require('express-session')
 let bodyParser = require('body-parser')
-let csrf = require('csurf')
-let pug = require('pug')
+let csrf       = require('csurf')
+let pug        = require('pug')
 let { check, validationResult } = require('express-validator/check')
-let { matchedData, sanitize } = require('express-validator/filter')
+let { matchedData, sanitize }   = require('express-validator/filter')
 
 //Initiate Express
 let app = express()
@@ -35,7 +35,16 @@ app.use(session({
   cookie: { secure: true }
 }))
 
-app.use(csrf({ cookie: true }))
+// csrf
+app.use(csrf({'cookie': true}));
+
+// setting middleware csrfToken
+app.use(function (req, res, next) {
+  var token = req.csrfToken();
+  res.cookie('XSRF-TOKEN', token);
+  res.locals.csrfToken = token;
+  next();
+});
 
 //bodyParser
 app.use(bodyParser.json())
