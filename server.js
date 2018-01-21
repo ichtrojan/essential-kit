@@ -5,7 +5,9 @@ var express = require('express')
 var path = require('path')
 var favicon = require('serve-favicon')
 var mongoose = require('mongoose')
+var cookieParser = require('cookie-parser')
 var bodyParser = require('body-parser')
+var csrf = require('csurf')
 var { check, validationResult } = require('express-validator/check')
 var { matchedData, sanitize } = require('express-validator/filter')
 
@@ -20,6 +22,14 @@ const PORT = process.env.PORT
 
 //View Engine
 app.set('view engine', 'pug')
+
+//set Middleware for security
+app.use(csrf({ cookie: true }))
+app.use(cookieParser());
+
+//bodyParser
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 
 //set public static path
 app.use(express.static(path.join(__dirname, 'public')))
@@ -39,3 +49,5 @@ app.use('/form', form)
 app.listen(PORT, (req, res, next) => {
   console.log('now serving on port ' + PORT)
 })
+
+module.exports = app;
