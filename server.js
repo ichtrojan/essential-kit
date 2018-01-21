@@ -9,6 +9,7 @@ let cookieParser = require('cookie-parser')
 let session = require('express-session')
 let bodyParser = require('body-parser')
 let csrf = require('csurf')
+let pug = require('pug')
 let { check, validationResult } = require('express-validator/check')
 let { matchedData, sanitize } = require('express-validator/filter')
 
@@ -26,11 +27,10 @@ app.set('view engine', 'pug')
 
 //set Middlewares for security
 app.use(cookieParser())
-app.set('trust proxy', 1)
 
 app.use(session({
   secret: 'keyboard',
-  resave: false,
+  resave: true,
   saveUninitialized: true,
   cookie: { secure: true }
 }))
@@ -39,7 +39,7 @@ app.use(csrf({ cookie: true }))
 
 //bodyParser
 app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({ extended: true }))
+app.use(bodyParser.urlencoded({ extended: false }))
 
 //set public static path
 app.use(express.static(path.join(__dirname, './public')))
