@@ -7,3 +7,4 @@ Aren't you tired of remembering all the essential packages you need just to craf
 * Database Models
 * Authentication (Login & Registation)
 * Pug Templating engine (You can change it if you want to)
+* CSRF Protection
