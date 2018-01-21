@@ -11,14 +11,13 @@ html
     link(herf='https://fonts.googleapis.com/css?family=Raleway:100,600', rel='stylesheet', type='text/css')
 
   body
-    b #{csrfToken}
     div.bootstrap-iso
     div.container-fluid
       div.row
         div.col-md-6.col-sm-6.col-xs-12
           form(method='post', action='/form')
             div.form-group
-              input(type='hidden', name='_csrf', value='#{csrfToken}')
+              input(type='hidden', name='_csrf', value=csrfToken)
               label.control-label.requiredField(for='name')
                 | Name
                 span.asteriskField

@@ -1,15 +1,16 @@
 let express = require('express')
 let bodyParser = require('body-parser')
-
 let app = express()
 
 let Form = require('../models/form')
 
 //Body Parser Middleware
-app.use(bodyParser.urlencoded({ extended: true }))
+app.use(bodyParser.urlencoded({ extended: false }))
 
 app.get('/', (req, res, next) => {
-  res.render('form', { csrfToken: req.csrfToken() })
+  res.render('form', {
+    csrfToken: req.csrfToken()
+  })
 })
 
 // Add a form data
