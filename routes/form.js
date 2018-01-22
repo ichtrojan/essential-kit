@@ -7,7 +7,7 @@ let app = express()
 let Form = require('../models/form')
 
 //Body Parser Middleware
-app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.urlencoded({ extended: true }))
 
 app.get('/', (req, res, next) => {
   let csrfToken = req.csrfToken()
@@ -25,7 +25,7 @@ app.post('/', (req, res) => {
   // save posts
   form.save()
 
-  // request flash
+  // request flash message (Might remove later)
   // var msg = req.flash('success', '1 new created ');
 
   // redirect home

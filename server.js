@@ -36,7 +36,7 @@ app.use(session({
 
 //bodyParser
 app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.urlencoded({ extended: true }))
 
 //csrf
 app.use(csrf({ cookie: true }))
