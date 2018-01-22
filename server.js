@@ -9,6 +9,7 @@ let cookieParser = require('cookie-parser')
 let session    = require('express-session')
 let bodyParser = require('body-parser')
 let csrf       = require('csurf')
+let flash  = require('connect-flash')
 let { check, validationResult } = require('express-validator/check')
 let { matchedData, sanitize }   = require('express-validator/filter')
 
@@ -46,6 +47,14 @@ app.use(express.static(path.join(__dirname, './public')))
 
 //set favicon
 app.use(favicon(path.join(__dirname, './public', 'favicon.ico')))
+
+//set fash Middleware
+app.use(flash())
+
+app.use( (req, res, next) => {
+	res.locals.flashes = req.flash();
+	next();
+});
 
 //Define Routes Here
 let index = require('./routes/index')
