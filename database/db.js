@@ -6,5 +6,5 @@ mongoose.Promise = global.Promise;
 mongoose.connect(process.env.DB_HOST).then(function (e){
 	console.log('Connected to MongoDB!');
 }).catch(function (e){
-	console.error('Fail to connect to MongoDB');
+	console.error('Failed to connect to MongoDB');
 });
