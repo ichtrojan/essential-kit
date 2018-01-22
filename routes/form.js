@@ -12,13 +12,10 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.get('/', (req, res, next) => {
   var csrfToken = req.csrfToken();
   res.render('form', { csrfToken })
-  // console.log(req.csrfToken());
 })
-
 
 // Add a form data
 app.post('/', (req, res) => {
-  // do save and return back.
   var form = new Form({
     name: req.body.name,
     email: req.body.email,
