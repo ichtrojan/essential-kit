@@ -52,8 +52,8 @@ app.use(favicon(path.join(__dirname, './public', 'favicon.ico')))
 app.use(flash())
 
 app.use( (req, res, next) => {
-	res.locals.flashes = req.flash();
-	next();
+	res.locals.flashes = req.flash()
+	next()
 });
 
 //Define Routes Here
