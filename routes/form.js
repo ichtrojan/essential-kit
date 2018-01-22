@@ -10,13 +10,13 @@ let Form = require('../models/form')
 app.use(bodyParser.urlencoded({ extended: false }))
 
 app.get('/', (req, res, next) => {
-  var csrfToken = req.csrfToken();
+  let csrfToken = req.csrfToken();
   res.render('form', { csrfToken })
 })
 
 // Add a form data
 app.post('/', (req, res) => {
-  var form = new Form({
+  let form = new Form({
     name: req.body.name,
     email: req.body.email,
     address: req.body.address
