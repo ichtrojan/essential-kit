@@ -12,7 +12,8 @@ Aren't you tired of remembering all the essential packages you need just to craf
 ## Installation
 * clone the repo (would publish to npm soon)
 * run `npm install`
+* run `cp .env.example .env` to copy the contents from `.env.example` to `.env` which would be created
 
 # Run
 * simply run `npm run essential`
-* visit your application on http://localhost:3000
+* visit your application on http://localhost:3000 (you can specify you custom port in the `.env` file)
