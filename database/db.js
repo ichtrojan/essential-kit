@@ -1,6 +1,5 @@
+//Require MongoDB
 var mongoose = require('mongoose');
-
-// mongoose.connect(process.env.DB_HOST);
 mongoose.Promise = global.Promise;
 
 // start connection
