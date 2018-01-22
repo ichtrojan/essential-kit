@@ -51,11 +51,6 @@ app.use(favicon(path.join(__dirname, './public', 'favicon.ico')))
 //set fash Middleware
 app.use(flash())
 
-app.use((req, res, next) => {
-	res.locals.flashes = req.flash()
-	next()
-});
-
 //Define Routes Here
 let index = require('./routes/index')
 let form = require('./routes/form')

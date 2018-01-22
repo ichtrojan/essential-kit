@@ -25,8 +25,8 @@ app.post('/', (req, res) => {
   // save posts
   form.save()
 
-  // request flash message (Might remove later)
-  // var msg = req.flash('success', '1 new created ');
+  // the flash message
+  req.flash('success', '1 new record created ')
 
   // redirect home
   res.redirect('/form')
