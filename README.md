@@ -15,4 +15,4 @@ Aren't you tired of remembering all the essential packages you need just to craf
 
 # Run
 * simply run `npm run essential`
-* visit your applica tion on http://localhost:3000
+* visit your application on http://localhost:3000

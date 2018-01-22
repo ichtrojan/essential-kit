@@ -10,7 +10,7 @@ let Form = require('../models/form')
 app.use(bodyParser.urlencoded({ extended: false }))
 
 app.get('/', (req, res, next) => {
-  let csrfToken = req.csrfToken();
+  let csrfToken = req.csrfToken()
   res.render('form', { csrfToken })
 })
 
@@ -20,16 +20,16 @@ app.post('/', (req, res) => {
     name: req.body.name,
     email: req.body.email,
     address: req.body.address
-  });
+  })
 
   // save posts
-  form.save();
+  form.save()
 
   // request flash
   // var msg = req.flash('success', '1 new created ');
 
   // redirect home
-  res.redirect('/form');
+  res.redirect('/form')
 });
 
 module.exports = app

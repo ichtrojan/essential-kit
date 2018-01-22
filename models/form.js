@@ -1,11 +1,11 @@
 // import mogoose
-let mongoose = require('mongoose');
+let mongoose = require('mongoose')
 
 // import promise
-mongoose.Promise = global.Promise;
+mongoose.Promise = global.Promise
 
 // create a Schema
-var Users = new mongoose.Schema({
+let Users = new mongoose.Schema({
 	name: {
 		type: String,
 		trim: true,
@@ -23,4 +23,4 @@ var Users = new mongoose.Schema({
 	}
 });
 
-module.exports = mongoose.model('Users', Users);
+module.exports = mongoose.model('Users', Users)
