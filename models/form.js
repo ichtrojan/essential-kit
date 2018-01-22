@@ -1,5 +1,5 @@
 // import mogoose
-var mongoose = require('mongoose');
+let mongoose = require('mongoose');
 
 // import promise
 mongoose.Promise = global.Promise;
