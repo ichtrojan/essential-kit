@@ -15,7 +15,7 @@ html
     div.container-fluid
       div.row.full-height.justify-content-center.align-items-center
         div.col-lg-4.col-md-6.col-sm-6.col-xs-12
-          form(method='post', action='/form')
+          form.form-style(method='post', action='/form')
             div.form-group
               input(type='hidden', name='_csrf', value=csrfToken)
               label.control-label.requiredField(for='name')
