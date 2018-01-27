@@ -13,8 +13,8 @@ html
   body
     div.bootstrap-iso
     div.container-fluid
-      div.row
-        div.col-md-6.col-sm-6.col-xs-12
+      div.row.justify-content-center
+        div.col-lg-4.col-md-6.col-sm-6.col-xs-12
           form(method='post', action='/form')
             div.form-group
               input(type='hidden', name='_csrf', value=csrfToken)
