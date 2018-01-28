@@ -26,10 +26,9 @@ Don't worry we got your 404 page covered
 
 ## Run
 * simply run `npm run essential`
+* visit your application on http://localhost:3333 (you can specify you custom port in the `.env` file)
 
 ![success](http://res.cloudinary.com/ichtrojan/image/upload/v1517161413/Screen_Shot_2018-01-28_at_6.42.21_PM_hbaskt.png)
-
-* visit your application on http://localhost:3333 (you can specify you custom port in the `.env` file)
 
 ## Special Addition
 The Beautiful Gradients used was generated using [web Gradients](https://webgradients.com/?ref=producthunt) 🔥🔥🔥
