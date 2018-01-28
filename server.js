@@ -19,7 +19,7 @@ let app = express()
 //Require Database configurations
 let db = require('./database/db')
 
-//Define Desired Port Here
+//Get port from the .env file
 let PORT = process.env.PORT
 
 //View Engine
