@@ -12,6 +12,8 @@ Aren't you tired of remembering all the essential packages you need just to craf
 * CSRF Protection 🔑
 * Working Favicon 😎
 
+![form](http://res.cloudinary.com/ichtrojan/image/upload/v1517135724/Screen_Shot_2018-01-28_at_10.41.05_AM_ftlsws.png)
+
 ## Installation
 * clone the repo (would publish to npm soon)
 * run `npm install`
