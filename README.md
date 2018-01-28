@@ -23,6 +23,7 @@ Don't worry we got your 404 page covered
 * clone the repo (would publish to npm soon)
 * run `npm install`
 * run `cp .env.example .env` to copy the contents from `.env.example` to `.env` which would be created
+* configure `DB_HOST` in your newly created `.env` file
 
 ## Run
 * simply run `npm run essential`
