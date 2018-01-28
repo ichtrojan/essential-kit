@@ -16,7 +16,7 @@ Aren't you tired of remembering all the essential packages you need just to craf
 
 ## Run
 * simply run `npm run essential`
-* visit your application on http://localhost:3000 (you can specify you custom port in the `.env` file)
+* visit your application on http://localhost:3333 (you can specify you custom port in the `.env` file)
 
 ## Addition
 The Beautiful Gradients used was generated using [web Gradients](https://webgradients.com/?ref=producthunt)
