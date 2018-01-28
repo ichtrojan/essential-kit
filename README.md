@@ -1,4 +1,5 @@
 # essential-kit
+![Archilect](http://res.cloudinary.com/ichtrojan/image/upload/v1517135622/archillect_desktop_y9dyd6.jpg)
 Aren't you tired of remembering all the essential packages you need just to craft a simple application, well this is for you.
 
 ## What you get
