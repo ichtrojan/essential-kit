@@ -21,6 +21,6 @@ let Users = new mongoose.Schema({
 		trim: true,
 		required: "can not post empty address"
 	}
-});
+})
 
 module.exports = mongoose.model('Users', Users)
