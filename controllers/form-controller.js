@@ -11,7 +11,7 @@ exports.save = (req, res, next) => {
   })
 
   // save posts
-  form.save();
+  form.save()
 
   // redirect home
   res.redirect('/form')
