@@ -2,18 +2,18 @@
 require('dotenv').config()
 
 // import our packages
-let express  = require('express')
-let path     = require('path')
-let favicon  = require('serve-favicon')
+let express = require('express')
+let path = require('path')
+let favicon = require('serve-favicon')
 let mongoose = require('mongoose')
 let cookieParser = require('cookie-parser')
-let session    = require('express-session')
-let flash      = require('connect-flash')
+let session = require('express-session')
+let flash = require('connect-flash')
 let bodyParser = require('body-parser')
-let csrf       = require('csurf')
-let route      = require('./routes/web'); // all request pass here
-let { check, validationResult } = require('express-validator/check')
-let { matchedData, sanitize }   = require('express-validator/filter')
+let csrf = require('csurf')
+
+//Require our Routes
+let route = require('./routes/web')
 
 //Require Database configurations
 let db = require('./database/db')
@@ -37,15 +37,6 @@ app.use(session({
   saveUninitialized: true,
   cookie: { secure: true }
 }))
-
-// let use the flash
-app.use(flash());
-
-// let app use the flashes
-app.use(function (req, res, next){
-	res.locals.flashes = req.flash();
-	next();
-});
 
 // bodyParser
 app.use(bodyParser.json())
