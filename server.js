@@ -1,7 +1,7 @@
-//require dotenv
+// Require dotenv
 require('dotenv').config()
 
-// import our packages
+// Import our packages
 let express = require('express')
 let path = require('path')
 let favicon = require('serve-favicon')
@@ -12,25 +12,25 @@ let flash = require('connect-flash')
 let bodyParser = require('body-parser')
 let csrf = require('csurf')
 
-//Require our Routes
-let route = require('./routes/web')
+// Require our Routes
+let routes = require('./routes/web')
 
-//Require Database configurations
+// Require Database configurations
 let db = require('./database/db')
 
-//Initiate Express
+// Initiate Express
 let app = express()
 
-//Define Desired Port Here
+// Define Desired Port Here
 let PORT = process.env.PORT
 
-//View Engine
+// View Engine
 app.set('view engine', 'pug')
 
-//set Middlewares for security
+// Set Middlewares for security
 app.use(cookieParser())
 
-// let app use the session
+// Set session
 app.use(session({
   secret: 'keyboard',
   resave: true,
@@ -38,21 +38,21 @@ app.use(session({
   cookie: { secure: true }
 }))
 
-// bodyParser
+// BodyParser
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 
-// csrf
+// CSRF
 app.use(csrf({ cookie: true }))
 
-// set public static path
+// Set public static path
 app.use(express.static(path.join(__dirname, './public')))
 
-//set favicon
+// Set favicon
 app.use(favicon(path.join(__dirname, './public', 'favicon.ico')))
 
-// let us do laravel pattern web.js (Entry point URI)
-app.use('/', route)
+// Routes Middleware
+app.use(routes)
 
 // Catch 404
 app.use((req, res) => {
