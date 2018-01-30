@@ -1,5 +1,5 @@
 //Require MongoDB
-var mongoose = require('mongoose')
+let mongoose = require('mongoose')
 mongoose.Promise = global.Promise
 
 // start connection
