@@ -1,8 +1,8 @@
-// require mongoose
+// Require mongoose
 let mongoose = require('mongoose')
 let User = require('../models/form')
 
-// save users
+// Save users
 exports.save = (req, res, next) => {
   let form = new User({
     name: req.body.name,
@@ -10,9 +10,9 @@ exports.save = (req, res, next) => {
     address: req.body.address
   })
 
-  // save posts
+  // Save Data
   form.save()
 
-  // redirect home
+  // Redirect back to form
   res.redirect('/form')
 }
