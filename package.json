@@ -28,7 +28,10 @@
     "express-validator": "^4.3.0",
     "mongoose": "^5.0.1",
     "nodemon": "^1.14.11",
+    "pg": "^7.4.1",
+    "pg-hstore": "^2.3.2",
     "pug": "^2.0.0-rc.4",
+    "sequelize": "^4.32.6",
     "serve-favicon": "^2.4.5"
   }
 }
