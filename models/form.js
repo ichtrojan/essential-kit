@@ -5,7 +5,7 @@ let mongoose = require('mongoose')
 mongoose.Promise = global.Promise
 
 // create a Schema
-let Users = new mongoose.Schema({
+let Detail = new mongoose.Schema({
 	name: {
 		type: String,
 		trim: true,
@@ -23,4 +23,4 @@ let Users = new mongoose.Schema({
 	}
 })
 
-module.exports = mongoose.model('Users', Users)
+module.exports = mongoose.model('Detail', Detail)

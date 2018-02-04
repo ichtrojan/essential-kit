@@ -2,9 +2,9 @@
 let mongoose = require('mongoose')
 let User = require('../models/form')
 
-// Save users
+// Save details
 exports.save = (req, res, next) => {
-  let form = new User({
+  let form = new Detail({
     name: req.body.name,
     email: req.body.email,
     address: req.body.address
