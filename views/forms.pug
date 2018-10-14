@@ -1,0 +1,41 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+
+    title form
+    link(rel='stylesheet' type='text/css', href='/css/style.css')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css', integrity='sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb', crossorigin='anonymous')
+    link(herf='https://fonts.googleapis.com/css?family=Raleway:100,600', rel='stylesheet', type='text/css')
+
+  body
+    div.bootstrap-iso
+    div.container-fluid
+      div.row.full-height.justify-content-center.align-items-center
+        div.col-lg-4.col-md-6.col-sm-6.col-xs-12
+          form.form-style(method='post', action='/forms')
+            div.form-group
+              input(type='hidden', name='_csrf', value=csrfToken)
+              label.control-label.requiredField(for='name', placeholder='Steve Jobs', style='color:white;')
+                | Name
+                span.asteriskField
+                  | *
+              input#name.form-control(name='name', type='text')
+            div.form-group
+              label.control-label.requiredField(for='email', placeholder='jobs@apple.com', style='color:white;')
+                | Email
+                span.asteriskField
+                  | *
+              input#email.form-control(name='email', type='text')
+            div.form-group
+              label.control-label.requiredField(for='subject', placeholder='1 Infinite Loop', style='color:white;')
+                | Address
+                span.asteriskField
+                  | *
+              input#address.form-control(name='address', type='text')
+            div.form-group
+              div
+                button.btn.btn-primary(name='submit', type='submit')
+                  | Submit

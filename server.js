@@ -17,7 +17,8 @@ let { matchedData, sanitize }   = require('express-validator/filter')
 let app = express()
 
 //Require Database configurations
-let db = require('./database/db')
+// to use postgres/mysql as default database comment out the code below
+// let db = require('./database/db')
 
 //Get port from the .env file
 let PORT = process.env.PORT
@@ -54,10 +55,12 @@ app.use(flash())
 //Define Routes Here
 let index = require('./routes/index')
 let form = require('./routes/form')
+let forms = require('./routes/forms')
 
 //Add Routes Middlewares Here
 app.use('/', index)
 app.use('/form', form)
+app.use('/forms', forms)
 
 //Catch 404
 app.use((req, res) => {
