@@ -1,34 +1,37 @@
-//require dotenv
+// Require dotenv
 require('dotenv').config()
 
-let express  = require('express')
-let path     = require('path')
-let favicon  = require('serve-favicon')
+// Import our packages
+let express = require('express')
+let path = require('path')
+let favicon = require('serve-favicon')
 let mongoose = require('mongoose')
 let cookieParser = require('cookie-parser')
-let session    = require('express-session')
+let session = require('express-session')
+let flash = require('connect-flash')
 let bodyParser = require('body-parser')
-let csrf       = require('csurf')
-let flash  = require('connect-flash')
-let { check, validationResult } = require('express-validator/check')
-let { matchedData, sanitize }   = require('express-validator/filter')
+let csrf = require('csurf')
 
-//Initiate Express
-let app = express()
+// Require our Routes
+let routes = require('./routes/web')
 
 //Require Database configurations
 // to use postgres/mysql as default database comment out the code below
 // let db = require('./database/db')
 
-//Get port from the .env file
+// Initiate Express
+let app = express()
+
+// Define Desired Port Here
 let PORT = process.env.PORT
 
-//View Engine
+// View Engine
 app.set('view engine', 'pug')
 
-//set Middlewares for security
+// Set Middlewares for security
 app.use(cookieParser())
 
+// Set session
 app.use(session({
   secret: 'keyboard',
   resave: true,
@@ -36,17 +39,17 @@ app.use(session({
   cookie: { secure: true }
 }))
 
-//bodyParser
+// BodyParser
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 
-//csrf
+// CSRF
 app.use(csrf({ cookie: true }))
 
-//set public static path
+// Set public static path
 app.use(express.static(path.join(__dirname, './public')))
 
-//set favicon
+// Set favicon
 app.use(favicon(path.join(__dirname, './public', 'favicon.ico')))
 
 //set fash Middleware
@@ -62,7 +65,7 @@ app.use('/', index)
 app.use('/form', form)
 app.use('/forms', forms)
 
-//Catch 404
+// Catch 404
 app.use((req, res) => {
   res.status(404)
   res.render('404')

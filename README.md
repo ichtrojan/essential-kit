@@ -1,4 +1,6 @@
 # Essential-kit
+[![Made in Nigeria](https://img.shields.io/badge/made%20in-nigeria-008751.svg?style=flat-square)](https://github.com/acekyd/made-in-nigeria)
+
 ![Essential](http://res.cloudinary.com/ichtrojan/image/upload/v1517135725/Screen_Shot_2018-01-28_at_10.41.16_AM_bn2iia.png)
 
 Aren't you tired of remembering all the essential packages you need just to craft a simple application, well this is for you.
