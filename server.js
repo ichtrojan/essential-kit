@@ -8,7 +8,6 @@ let favicon = require('serve-favicon')
 let mongoose = require('mongoose')
 let cookieParser = require('cookie-parser')
 let session = require('express-session')
-let flash = require('connect-flash')
 let bodyParser = require('body-parser')
 let csrf = require('csurf')
 
@@ -16,7 +15,7 @@ let csrf = require('csurf')
 let routes = require('./routes/web')
 
 // Require Database configurations
-let db = require('./database/db')
+let mongoDB = require('./database/mongo')
 
 // Initiate Express
 let app = express()
