@@ -59,7 +59,7 @@ app.use((req, res) => {
   res.render('404')
 })
 
-//Serve Application
+// Serve Application
 app.listen(PORT, (req, res, next) => {
   console.log('now serving on port ' + PORT)
 })
