@@ -23,8 +23,14 @@ let app = express()
 // Define Desired Port Here
 let PORT = process.env.PORT
 
+//sets the app engine so exp
+app.engine("pug", require("pug").__express);
+
 // View Engine
 app.set('view engine', 'pug')
+
+//specifies the path to access the views
+app.set("views", path.join(__dirname, "views"))
 
 // Set Middlewares for security
 app.use(cookieParser())
@@ -45,10 +51,10 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(csrf({ cookie: true }))
 
 // Set public static path
-app.use(express.static(path.join(__dirname, './public')))
+app.use(express.static(path.join(__dirname, 'public')))
 
 // Set favicon
-app.use(favicon(path.join(__dirname, './public', 'favicon.ico')))
+app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
 
 // Routes Middleware
 app.use(routes)
